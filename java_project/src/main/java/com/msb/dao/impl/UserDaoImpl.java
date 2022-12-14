@@ -1,0 +1,1 @@
+package com.msb.dao.impl;public class UserDaoImpl {}
