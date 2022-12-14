@@ -1,0 +1,1 @@
+package com.msb.dao;public class Dao {}
