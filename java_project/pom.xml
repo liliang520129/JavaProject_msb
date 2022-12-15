@@ -5,15 +5,43 @@
   <groupId>com.msb</groupId>  
   <artifactId>java_project</artifactId>  
   <version>1.0-SNAPSHOT</version>  
-  <packaging>war</packaging>
-
-  <dependencies>
-
+  <modules> 
+    <module>java_project_maven</module> 
+  </modules>  
+  <packaging>war</packaging>  
+  <dependencies> 
     <dependency> 
       <groupId>javax.servlet</groupId>  
       <artifactId>javax.servlet-api</artifactId>  
       <version>4.0.1</version> 
-    </dependency>
-
-  </dependencies> 
+    </dependency> 
+  </dependencies>  
+  <build> 
+    <plugins> 
+      <!-- 配置Tomcat插件 -->  
+      <plugin> 
+        <groupId>org.apache.tomcat.maven</groupId>  
+        <artifactId>tomcat7-maven-plugin</artifactId>  
+        <version>2.2</version>  
+        <configuration> 
+          <!-- 配置Tomcat监听端口 -->  
+          <port>8080</port>  
+          <!-- 配置项目的访问路径(Application Context) -->  
+          <path>/</path> 
+        </configuration> 
+      </plugin> 
+    </plugins> 
+  </build>  
+  <properties> 
+    <mybatis-version>3.5.9</mybatis-version> 
+  </properties>  
+  <dependencyManagement> 
+    <dependencies> 
+      <dependency> 
+        <groupId>org.mybatis</groupId>  
+        <artifactId>mybatis</artifactId>  
+        <version>${mybatis-version}</version> 
+      </dependency> 
+    </dependencies> 
+  </dependencyManagement> 
 </project>
